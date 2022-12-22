@@ -11,7 +11,12 @@ export DEFAULT_USER="simon"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="agnoster"
+if [ -t 1 ]
+then
+	ZSH_THEME="agnoster"
+else
+	ZSH_THEME="geoffgarside"
+fi
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -110,8 +115,9 @@ source $ZSH/oh-my-zsh.sh
 alias yay='paru --limit 10' 
 alias yeet='paru -Rsn'
 alias search='paru -Ss'
-alias update='paru -Syu --skipreview && paru -Scc --noconfirm && protonup && doom upgrade && omz update'
+alias update='paru -Syu --skipreview && paru -Scc --noconfirm && protonup -y && doom upgrade && omz update'
 alias hostname="uname -n"
+alias e="emacsclient -c"
 
 # Edit and source zshrc file"
 alias rc="vim ~/.zshrc && source ~/.zshrc"
@@ -126,3 +132,4 @@ alias add='git add'
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 
+export CLASSPATH=.:$HOME/libs/
