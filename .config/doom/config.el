@@ -4,6 +4,11 @@
 ;; sync' after modifying this file!
 
 
+;; Some functionality uses this to identify you, e.g. GPG configuration, email
+;; clients, file templates and snippets. It is optional.
+(setq user-full-name "John Doe"
+      user-mail-address "john@doe.com")
+
 ;; Doom exposes five (optional) variables for controlling fonts in Doom:
 ;;
 ;; - `doom-font' -- the primary font to use
@@ -16,8 +21,8 @@
 ;; See 'C-h v doom-font' for documentation and more examples of what they
 ;; accept. For example:
 ;;
-(setq doom-font (font-spec :family "Fira Code" :size 13 :weight 'Regular)
-doom-variable-pitch-font (font-spec :family "Fira Sans" :size 13))
+(setq doom-font (font-spec :family "FiraCode Nerd Font" :size 12 :weight 'semi-light)
+      doom-variable-pitch-font (font-spec :family "FiraCode" :size 13))
 ;;
 ;; If you or Emacs can't find your font, use 'M-x describe-font' to look them
 ;; up, `M-x eval-region' to execute elisp code, and 'M-x doom/reload-font' to
@@ -27,7 +32,6 @@ doom-variable-pitch-font (font-spec :family "Fira Sans" :size 13))
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
 ;; `load-theme' function. This is the default:
-;;(setq doom-theme 'one)
 (setq doom-theme 'doom-gruvbox)
 
 ;; This determines the style of line numbers in effect. If set to `nil', line
