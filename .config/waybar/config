@@ -1,15 +1,16 @@
 {
     "position": "top",
     "layer": "top",
-    "height": 30,
-    "modules-left": ["wlr/workspaces"],
-    "modules-right": ["tray","memory","cpu","pulseaudio", "network", "battery", "custom/date", "clock", "custom/power"],
+    "height": 34,
+    "modules-left": ["hyprland/workspaces"],
+    "modules-right": ["tray","memory","cpu","pulseaudio", "battery", "custom/date", "clock", "custom/power"],
     // Modules configuration
-    "wlr/workspaces": {
+    "hyprland/workspaces": {
         "on-click": "activate",
         "active-only": false,
         "all-outputs": true,
         "disable-scroll": false,
+        "format": "{icon}",
         "on-scroll-up": "hyprctl dispatch workspace -1",
         "on-scroll-down": "hyprctl dispatch workspace +1",
     },
