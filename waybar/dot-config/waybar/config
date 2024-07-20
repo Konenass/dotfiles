@@ -1,0 +1,77 @@
+{
+    "position": "top",
+    "layer": "top",
+    "height": 34,
+    "modules-left": ["hyprland/workspaces"],
+    "modules-right": ["tray","memory","cpu","pulseaudio", "battery", "custom/date", "clock", "custom/power"],
+    // Modules configuration
+    "hyprland/workspaces": {
+        "on-click": "activate",
+        "active-only": false,
+        "all-outputs": false,
+        "disable-scroll": false,
+        "format": "{icon}",
+        "on-scroll-up": "hyprctl dispatch workspace -1",
+        "on-scroll-down": "hyprctl dispatch workspace +1",
+    },
+	"custom/date": {
+    	"format": "󰸗 {}",
+		"interval": 3600,
+		"exec": "$HOME/.config/waybar/bin/waybar-date.sh"
+	},
+	"custom/power": {
+		"format": "󰐥",
+		"on-click": "$HOME/.config/waybar/bin/waybar-power.sh"
+	},
+	"clock": {
+		"format": "󰅐 {:%H:%M}",
+        	"tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        	"format-alt": "{:%Y-%m-%d}"
+	},
+	"battery": {
+        	"states": {
+            		"warning": 30,
+            		"critical": 15
+        	},
+        	"format": "{icon} {capacity}%",
+        	"format-charging": "󰂄 {capacity}%",
+        	"format-plugged": "󰂄{capacity}%",
+        	"format-alt": "{time} {icon}",
+        	"format-full": "󱈑 {capacity}%",
+        	"format-icons": ["󱊡", "󱊢", "󱊣"]
+	},
+	"network": {
+        	"format-wifi": "  {essid}",
+        	"format-ethernet": "󰈀",
+        	"format-linked": "{ifname} (No IP) 󰈀",
+        	"format-disconnected": "󰤮 Disconnected",
+        	"format-alt": "{ifname}: {ipaddr}/{cidr}"
+	},
+	"pulseaudio": {
+		"format": "{icon}  {volume}%",
+        	"format-muted": "󰖁 Muted",
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "󱡏",
+            "headset": "󰋎",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", "", ""]
+        },
+        "on-click": "pavucontrol"
+    },
+    "tray": {
+        "icon-size": 24,
+        "spacing": 1,
+        "show-passive-items": true
+    },
+    "cpu": {
+        "interval": 1,
+        "format": "󰻠 {usage}%",
+    },
+    "memory": {
+        "interval": 1,
+        "format": "󰍛 {used}GiB"
+    }
+}

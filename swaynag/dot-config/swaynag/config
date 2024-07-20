@@ -1,0 +1,16 @@
+[custom]
+font=FiraCode Nerd Font 10
+dismiss-button=Dismiss
+background=282828
+border=504945
+border-bottom=504945
+button-background=504945
+text=ebdbb2
+border-bottom-size=2
+message-padding=5
+details-border-size=2
+button-border-size=2
+button-gap=5
+button-dismiss-gap=5
+button-margin-right=5
+button-padding=5
