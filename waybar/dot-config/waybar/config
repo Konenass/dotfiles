@@ -2,7 +2,7 @@
     "position": "top",
     "layer": "top",
     "height": 34,
-    "modules-left": ["hyprland/workspaces"],
+    "modules-left": ["custom/apps","hyprland/workspaces"],
     "modules-right": ["tray","memory","cpu","pulseaudio", "battery", "custom/date", "clock", "custom/power"],
     // Modules configuration
     "hyprland/workspaces": {
@@ -14,52 +14,52 @@
         "on-scroll-up": "hyprctl dispatch workspace -1",
         "on-scroll-down": "hyprctl dispatch workspace +1",
     },
-	"custom/date": {
-    	"format": "󰸗 {}",
-		"interval": 3600,
-		"exec": "$HOME/.config/waybar/bin/waybar-date.sh"
-	},
-	"custom/power": {
-		"format": "󰐥",
-		"on-click": "$HOME/.config/waybar/bin/waybar-power.sh"
-	},
-	"clock": {
-		"format": "󰅐 {:%H:%M}",
-        	"tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-        	"format-alt": "{:%Y-%m-%d}"
-	},
-	"battery": {
-        	"states": {
-            		"warning": 30,
-            		"critical": 15
-        	},
-        	"format": "{icon} {capacity}%",
-        	"format-charging": "󰂄 {capacity}%",
-        	"format-plugged": "󰂄{capacity}%",
-        	"format-alt": "{time} {icon}",
-        	"format-full": "󱈑 {capacity}%",
-        	"format-icons": ["󱊡", "󱊢", "󱊣"]
-	},
-	"network": {
-        	"format-wifi": "  {essid}",
-        	"format-ethernet": "󰈀",
-        	"format-linked": "{ifname} (No IP) 󰈀",
-        	"format-disconnected": "󰤮 Disconnected",
-        	"format-alt": "{ifname}: {ipaddr}/{cidr}"
-	},
-	"pulseaudio": {
-		"format": "{icon}  {volume}%",
-        	"format-muted": "󰖁 Muted",
-        "format-icons": {
-            "headphone": "",
-            "hands-free": "󱡏",
-            "headset": "󰋎",
-            "phone": "",
-            "portable": "",
-            "car": "",
-            "default": ["", "", ""]
-        },
-        "on-click": "pavucontrol"
+    "custom/date": {
+      	"format": "󰸗 {}",
+      	"interval": 3600,
+      	"exec": "$HOME/.config/waybar/bin/waybar-date.sh"
+    },
+    "custom/power": {
+      	"format": "󰐥",
+      	"on-click": "$HOME/.config/waybar/bin/waybar-power.sh"
+    },
+      "clock": {
+      	"format": "󰅐 {:%H:%M}",
+      	"tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+      	"format-alt": "{:%Y-%m-%d}"
+      },
+      "battery": {
+      	"states": {
+          		"warning": 30,
+          		"critical": 15
+      	},
+      	"format": "{icon} {capacity}%",
+      	"format-charging": "󰂄 {capacity}%",
+      	"format-plugged": "󰂄{capacity}%",
+      	"format-alt": "{time} {icon}",
+      	"format-full": "󱈑 {capacity}%",
+      	"format-icons": ["󱊡", "󱊢", "󱊣"]
+      },
+      "network": {
+      	"format-wifi": "  {essid}",
+      	"format-ethernet": "󰈀",
+      	"format-linked": "{ifname} (No IP) 󰈀",
+      	"format-disconnected": "󰤮 Disconnected",
+      	"format-alt": "{ifname}: {ipaddr}/{cidr}"
+      },
+      "pulseaudio": {
+      	"format": "{icon}  {volume}%",
+      	"format-muted": "󰖁 Muted",
+      "format-icons": {
+          "headphone": "",
+          "hands-free": "󱡏",
+          "headset": "󰋎",
+          "phone": "",
+          "portable": "",
+          "car": "",
+          "default": ["", "", ""]
+      },
+      "on-click": "pavucontrol"
     },
     "tray": {
         "icon-size": 24,
@@ -73,5 +73,10 @@
     "memory": {
         "interval": 1,
         "format": "󰍛 {used}GiB"
-    }
+    },
+    "custom/apps": {
+    	"format":" 󰀻",
+	"on-click": "exec nwg-drawer -c 7 -is 70 -spacing 23",
+	"tooltip": false		
+    },
 }
